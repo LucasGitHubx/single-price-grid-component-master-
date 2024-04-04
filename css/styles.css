@@ -1,0 +1,116 @@
+:root{
+    --Cyan: hsl(179, 62%, 43%);
+    --Lighter_Cyan: hsl(179, 58%, 52%);
+    --Bright_Yellow: hsl(71, 73%, 54%);
+    --Light_Gray: hsl(204, 43%, 93%);
+    --Grayish_Blue: hsl(218, 22%, 67%);
+}
+*{
+    font-family: Arial, Helvetica, sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body{
+    background-color: var(--Light_Gray);
+    min-height: 100vh;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+main{
+    width: 100%;
+    min-width: 350px;
+    max-width: 700px;
+    margin: 1rem;
+    box-shadow: 0px 0px 25px rgb(204, 203, 203);
+    border-radius: 10px;
+    overflow: hidden;
+
+    display: grid;
+    grid-template-columns: auto(auto-fit, minmax(300px, 1fr));
+}
+main section:first-child{
+    padding: 30px;
+
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+}
+main section:first-child h1{
+    color: var(--Cyan);
+}
+main section:first-child p{
+    color: var(--Grayish_Blue);
+    line-height: 1.7rem;
+}
+main section:first-child p:nth-child(2){
+    color: var(--Bright_Yellow);
+    font-weight: bold;
+}
+
+main section:nth-child(2){
+    padding: 30px;
+    background-color: var(--Cyan);
+    color: var(--Light_Gray);
+
+    display: flex;
+    flex-direction: column;
+}
+
+main section:nth-child(2) h2{
+    font-size: 1.2rem;
+    margin-bottom: 25px;
+}
+main section:nth-child(2) article{
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+main section:nth-child(2) article div{
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+main section:nth-child(2) article div p:first-child{
+    font-weight: bold;
+    font-size: 2rem;
+}
+main section:nth-child(2) button{
+    background-color: var(--Bright_Yellow);
+    color: var(--Light_Gray);
+    padding: 15px;
+    margin-top: 30px;
+    font-size: 1.2rem;
+    font-weight: 700;
+    border-radius: 8px;
+    border: none;
+    box-shadow: 0px 0px 15px rgb(117, 117, 117);
+}
+
+main section:last-child{
+    padding: 30px;
+    background-color: var(--Lighter_Cyan);
+    color: var(--Light_Gray);
+
+    display: flex;
+    flex-direction: column;
+}
+main section:last-child ul{
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    margin-top: 25px;
+}
+
+@media (min-width:1440px) {
+    main{
+        grid-template-columns: repeat(2, 350px);
+    }
+    main section:first-child{
+        grid-column: 1/3;
+    }
+}
